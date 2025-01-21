@@ -13,7 +13,9 @@ router.post('/admin/signin', (req, res)=>{
   const {email, password} = req.body;
 
   if ((email !== process.env.USERNAME) || (password !== process.env.PASSWORD)) {
-    res.render('adminPages/signin', {error: 'Invalid credentials'});
+    // Render the signin page with an error message
+    res.render('adminPages/signin', { error: 'Invalid credentials' });
+    return; // Stop further execution
   }
 
   // generate JWT

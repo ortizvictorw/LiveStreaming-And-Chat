@@ -8,21 +8,135 @@
   <link rel="stylesheet" href="/public/css/main.css" />
   <script defer type="module" src="/public/js/index.js"></script>
   <title>SweatStream</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #6200ea;
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .audio-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .audio-section audio {
+      width: 100%;
+      max-width: 400px;
+      margin: 10px 0;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .controls button {
+      background-color: #6200ea;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #3700b3;
+    }
+
+    .livechat {
+      margin-top: 30px;
+    }
+
+    .messages {
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .chat-input-container {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .chat-input-container input {
+      flex-grow: 1;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .chat-input-container button {
+      background-color: #6200ea;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .chat-input-container button:hover {
+      background-color: #3700b3;
+    }
+
+    .messages ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .messages ul li {
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>SweatStream.com</h1>
+    <h1>IEPE - MEET</h1>
   </header>
 
   <main>
-    <section class="video-section">
-      <video id="videoplayer" autoplay muted></video>
+    <!-- Sección de audio con estilos -->
+    <section class="audio-section">
+      <audio id="audioplayer" autoplay controls ></audio>
 
       <div class="controls">
         <button id="sound" type="button">Unmute</button>
       </div>
     </section>
 
+    <!-- Sección de chat en vivo -->
     <section class="livechat">
       <h5>Viewers in chat: <span id="viewerCount">0</span></h5>
 
